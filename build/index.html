@@ -40,6 +40,20 @@
       }
 
     });
+    window.addEventListener("keyup", function(event){
+      if (event.keyCode === 8){
+        event.preventDefault();
+        document.getElementById("prev").click();
+      }
+
+    });
+    window.addEventListener("keyup", function(event){
+      if (event.keyCode === 16){
+        event.preventDefault();
+        document.getElementById("next").click();
+      }
+
+    });
 
       AdaliaComics.init({
           container:"#adalia-comics"
