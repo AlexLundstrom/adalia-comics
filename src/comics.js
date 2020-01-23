@@ -44,6 +44,7 @@ document.querySelector("#prev").addEventListener("click", function(){
   prevcomic()
 })
 
+
 window.interval = setInterval(changecomics, 30000)
 
 
