@@ -26,7 +26,12 @@ function changecomics(){
 
   iframe.setAttribute('src', COMIC_URLS[index])
 }
-
+function Pausefunction(){
+  clearInterval(window.interval); 
+}
+function Unpausefunction(){
+  window.interval = setInterval (changecomics, 3000);
+}
 function prevcomic(){
   index = index-1;
   if (index < 0){
@@ -43,9 +48,28 @@ document.querySelector("#next").addEventListener("click", function(){
 document.querySelector("#prev").addEventListener("click", function(){
   prevcomic()
 })
+window.addEventListener("keyup", function(event){
+  if (event.keyCode === 13){
+    event.preventDefault();
+    document.getElementById("mybutton").click();
+  }
+  if (event.keyCode === 8){
+    event.preventDefault();
+    document.getElementById("prev").click();
+  }
+  if (event.keyCode === 16){
+    event.preventDefault();
+    document.getElementById("next").click();
+  }
+  if (event.keyCode === 9){
+    event.preventDefault();
+    document.getElementById("unpause").click();
+  }
 
 
-window.interval = setInterval(changecomics, 30000)
+});
+
+window.interval = setInterval(changecomics, 3000)
 
 
   /* Todo:
